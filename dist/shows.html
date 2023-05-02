@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="font-[100%] box-border overflow-x-hidden">
+<html lang="en" class="font-[100%] box-border">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,11 +11,11 @@
       rel="stylesheet"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homepage</title>
+    <title>Document</title>
   </head>
-  <body class="font-customFont overflow-x-hidden">
+  <body class="font-customFont">
     <nav
-      class="text-white bg-slate-800 px-3 py-4 w-full flex justify-between items-center sticky top-0 z-10"
+      class="sticky top-0 z-10 flex items-center justify-between w-full px-5 py-4 text-white bg-slate-800"
     >
       <div class="flex items-center cursor-pointer">
         <img
@@ -25,58 +25,24 @@
           width="50"
           class="md:scale-[1.2]"
         />
-        <h2 class="uppercase font-bold text-md md:text-2xl md:ml-2">
+        <h2 class="font-bold uppercase text-md md:text-2xl md:ml-2">
           ReelScape
         </h2>
       </div>
       <div>
-        <ul class="flex items-center gap-3 text-md cursor-pointer md:text-2xl">
-          <li class="text-white hover:text-yellow-300 mr-1">Movies</li>
-          <li class="text-white hover:text-yellow-300 mr-1">TVShows</li>
+        <ul class="flex items-center gap-3 cursor-pointer text-md md:text-2xl">
+          <li class="mr-1 text-white hover:text-yellow-300">Movies</li>
+          <li class="mr-1 text-white hover:text-yellow-300">TVShows</li>
         </ul>
       </div>
     </nav>
-    <main class="bg-slate-800 text-white h-auto">
-      <div
-        class="h-96 pt-5 bg-cover bg-center"
-        style="background-image: url('../images/reel-showcase.jpg')"
-      >
-        <h1 class="text-md text-center font-bold uppercase pt-10 md:text-2xl">
-          Now Playing
-        </h1>
-      </div>
-      <article
-        class="mx-auto my-10 w-[98%] p-3 flex items-center justify-center"
-      >
-        <div class="pt-5 text-center">
-          <label for="movies">Movies</label>
-          <input type="radio" id="movies" name="movies" />
-          <span class="mx-2"></span>
-          <label for="tv-shows">TV Shows</label>
-          <input type="radio" id="tv-shows" name="movies"
-        </div>
-        <form
-          class="mt-5 mb-10 w-full flex flex-col items-center gap-5 md:flex-row"
-        >
-          <input
-            type="text"
-            id="user-input"
-            placeholder="Enter movie name...."
-            class="w-[350px] px-4 py-2.5 border-2 rounded-md border-white bg-transparent focus:outline-yellow-100 md:w-[500px]"
-          />
-          <button
-            class="text-white text-md bg-[#2b4259] px-6 py-2.5 w-full rounded-md border-2 border-white md:w-[20%]"
-          >
-            Search
-          </button>
-        </form>
-      </article>
-      <section id="popular-movies" class="mt-2">
-        <h1 class="text-center font-bold text-2xl uppercase tracking-wider">
-          Popular Movies
-        </h1>
+    <main class="text-white bg-slate-800 h-min">
+      <h1 class="pt-20 text-xl text-center md:text-2xl lg:text-4xl">
+        Popular TV shows
+      </h1>
+      <section id="popular-movies" class="pt-2">
         <ul
-          class="flex w-full mt-5 mx-auto flex-wrap items-center justify-center gap-5"
+          class="flex w-[95%] mt-10 mx-auto flex-wrap items-center justify-center gap-5"
         >
           <li
             class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
@@ -90,8 +56,8 @@
               />
             </div>
             <div class="flex flex-col items-center gap-3 pt-2">
-              <p>Movie Name</p>
-              <p>Release: 12/11/2121</p>
+              <p class="text-lg font-bold">Show Title</p>
+              <p>Aired: 12/11/2121</p>
             </div>
           </li>
           <li
@@ -106,8 +72,8 @@
               />
             </div>
             <div class="flex flex-col items-center gap-3 pt-2">
-              <p>Movie Name</p>
-              <p>Release: 12/11/2121</p>
+              <p class="text-lg font-bold">Show Title</p>
+              <p>Aired: 12/11/2121</p>
             </div>
           </li>
           <li
@@ -122,8 +88,8 @@
               />
             </div>
             <div class="flex flex-col items-center gap-3 pt-2">
-              <p>Movie Name</p>
-              <p>Release: 12/11/2121</p>
+              <p class="text-lg font-bold">Show Title</p>
+              <p>Aired: 12/11/2121</p>
             </div>
           </li>
           <li
@@ -138,8 +104,8 @@
               />
             </div>
             <div class="flex flex-col items-center gap-3 pt-2">
-              <p>Movie Name</p>
-              <p>Release: 12/11/2121</p>
+              <p class="text-lg font-bold">Show Title</p>
+              <p>Aired: 12/11/2121</p>
             </div>
           </li>
           <li
@@ -154,8 +120,8 @@
               />
             </div>
             <div class="flex flex-col items-center gap-3 pt-2">
-              <p>Movie Name</p>
-              <p>Release: 12/11/2121</p>
+              <p class="text-lg font-bold">Show Title</p>
+              <p>Aired: 12/11/2121</p>
             </div>
           </li>
           <li
@@ -170,8 +136,8 @@
               />
             </div>
             <div class="flex flex-col items-center gap-3 pt-2">
-              <p>Movie Name</p>
-              <p>Release: 12/11/2121</p>
+              <p class="text-lg font-bold">Show Title</p>
+              <p>Aired: 12/11/2121</p>
             </div>
           </li>
           <li
@@ -186,8 +152,8 @@
               />
             </div>
             <div class="flex flex-col items-center gap-3 pt-2">
-              <p>Movie Name</p>
-              <p>Release: 12/11/2121</p>
+              <p class="text-lg font-bold">Show Title</p>
+              <p>Aired: 12/11/2121</p>
             </div>
           </li>
           <li
@@ -202,8 +168,8 @@
               />
             </div>
             <div class="flex flex-col items-center gap-3 pt-2">
-              <p>Movie Name</p>
-              <p>Release: 12/11/2121</p>
+              <p class="text-lg font-bold">Show Title</p>
+              <p>Aired: 12/11/2121</p>
             </div>
           </li>
           <li
@@ -218,8 +184,8 @@
               />
             </div>
             <div class="flex flex-col items-center gap-3 pt-2">
-              <p>Movie Name</p>
-              <p>Release: 12/11/2121</p>
+              <p class="text-lg font-bold">Show Title</p>
+              <p>Aired: 12/11/2121</p>
             </div>
           </li>
           <li
@@ -234,30 +200,14 @@
               />
             </div>
             <div class="flex flex-col items-center gap-3 pt-2">
-              <p>Movie Name</p>
-              <p>Release: 12/11/2121</p>
-            </div>
-          </li>
-          <li
-            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
-          >
-            <div>
-              <img
-                src="../images/No-Image-Placeholder.svg.png"
-                alt="image not found"
-                height="300"
-                width="300"
-              />
-            </div>
-            <div class="flex flex-col items-center gap-3 pt-2">
-              <p>Movie Name</p>
-              <p>Release: 12/11/2121</p>
+              <p class="text-lg font-bold">Show Title</p>
+              <p>Aired: 12/11/2121</p>
             </div>
           </li>
         </ul>
       </section>
       <footer
-        class="py-5 px-5 mt-10 uppercase flex w-full items-center justify-between"
+        class="flex items-center justify-between w-full px-5 py-5 mt-10 uppercase"
       >
         <img
           src="../images/film-reel.png"

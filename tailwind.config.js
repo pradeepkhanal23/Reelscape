@@ -2,9 +2,15 @@
 module.exports = {
   content: ["./dist/*.{html,js}"],
   theme: {
+    screens: {
+      sm: "375px",
+      md: "810px",
+      lg: "1000px",
+      xl: "1300px",
+    },
     extend: {
       fontFamily: {
-        customFont: "'Cabin Sketch','Poppins','Montserrat Alternates',serif",
+        customFont: "'Sen','Cabin Sketch',serif",
       },
     },
   },
