@@ -1,32 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="font-[100%] box-border">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="./output.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Braah+One&family=Cabin+Sketch:wght@400;700&family=Montserrat+Alternates:wght@400;600;800&family=Poppins:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body class="font-mono">
+  <body class="font-customFont">
     <nav
-      class="bg-black text-white px-10 py-6 backdrop-blur-sm flex justify-between items-center"
+      class="text-white bg-slate-800 px-10 py-2 flex justify-between items-center sticky top-0 z-10"
     >
-      <header class="text-3xl font-bold uppercase cursor-pointer">
-        ReelScape
-      </header>
+      <div class="flex items-center gap-2 cursor-pointer">
+        <img
+          src="../images/film-reel.png"
+          alt="reelscape"
+          height="60"
+          width="70"
+        />
+        <h2 class="uppercase font-bold text-2xl">ReelScape</h2>
+      </div>
       <div>
         <ul class="flex items-center gap-3 text-xl cursor-pointer">
-          <li>Movies</li>
-          <li>TVshows</li>
+          <li class="text-white hover:text-yellow-300">Movies</li>
+          <li class="text-white hover:text-yellow-300">TVShows</li>
         </ul>
       </div>
     </nav>
     <main class="bg-slate-800 text-white h-auto">
       <div
-        class="h-64"
-        style="background-image: url('../images/showcase-bg.jpg')"
+        class="h-96 pt-5 bg-cover bg-center"
+        style="background-image: url('../images/reel-showcase.jpg')"
       >
         <h1 class="text-4xl text-center font-bold uppercase pt-10">
           Now Playing
@@ -38,6 +48,7 @@
         <div>
           <label for="movies">Movies</label>
           <input type="radio" id="movies" name="movies" />
+          <span class="mx-2"></span>
           <label for="tv-shows">TV Shows</label>
           <input type="radio" id="tv-shows" name="movies"
         </div>
@@ -46,10 +57,10 @@
             type="text"
             id="user-input"
             placeholder="Enter movie name...."
-            class="w-[500px] px-4 py-2 border-2 rounded-md border-white bg-transparent focus:outline-yellow-100"
+            class="w-[500px] px-4 py-2.5 border-2 rounded-md border-white bg-transparent focus:outline-yellow-100"
           />
           <button
-            class="bg-yellow-200 text-black px-4 py-2.5 rounded-md font-bold"
+            class="text-white text-lg bg-[#2b4259] px-4 py-2 rounded-md border-2 border-white"
           >
             <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
             Search
@@ -63,7 +74,9 @@
         <ul
           class="flex w-[95%] mt-10 mx-auto flex-wrap items-center justify-center gap-5"
         >
-          <li class="border-white border-2 p-2 rounded-md">
+          <li
+            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
+          >
             <div>
               <img
                 src="../images/No-Image-Placeholder.svg.png"
@@ -77,7 +90,9 @@
               <p>Release: 12/11/2121</p>
             </div>
           </li>
-          <li class="border-white border-2 p-2 rounded-md">
+          <li
+            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
+          >
             <div>
               <img
                 src="../images/No-Image-Placeholder.svg.png"
@@ -91,7 +106,9 @@
               <p>Release: 12/11/2121</p>
             </div>
           </li>
-          <li class="border-white border-2 p-2 rounded-md">
+          <li
+            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
+          >
             <div>
               <img
                 src="../images/No-Image-Placeholder.svg.png"
@@ -105,7 +122,9 @@
               <p>Release: 12/11/2121</p>
             </div>
           </li>
-          <li class="border-white border-2 p-2 rounded-md">
+          <li
+            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
+          >
             <div>
               <img
                 src="../images/No-Image-Placeholder.svg.png"
@@ -119,7 +138,9 @@
               <p>Release: 12/11/2121</p>
             </div>
           </li>
-          <li class="border-white border-2 p-2 rounded-md">
+          <li
+            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
+          >
             <div>
               <img
                 src="../images/No-Image-Placeholder.svg.png"
@@ -133,7 +154,9 @@
               <p>Release: 12/11/2121</p>
             </div>
           </li>
-          <li class="border-white border-2 p-2 rounded-md">
+          <li
+            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
+          >
             <div>
               <img
                 src="../images/No-Image-Placeholder.svg.png"
@@ -147,7 +170,9 @@
               <p>Release: 12/11/2121</p>
             </div>
           </li>
-          <li class="border-white border-2 p-2 rounded-md">
+          <li
+            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
+          >
             <div>
               <img
                 src="../images/No-Image-Placeholder.svg.png"
@@ -161,7 +186,57 @@
               <p>Release: 12/11/2121</p>
             </div>
           </li>
-          <li class="border-white border-2 p-2 rounded-md">
+          <li
+            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
+          >
+            <div>
+              <img
+                src="../images/No-Image-Placeholder.svg.png"
+                alt="image not found"
+                height="300"
+                width="300"
+              />
+            </div>
+            <div class="flex flex-col items-center gap-3 pt-2">
+              <p>Movie Name</p>
+              <p>Release: 12/11/2121</p>
+            </div>
+          </li>
+          <li
+            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
+          >
+            <div>
+              <img
+                src="../images/No-Image-Placeholder.svg.png"
+                alt="image not found"
+                height="300"
+                width="300"
+              />
+            </div>
+            <div class="flex flex-col items-center gap-3 pt-2">
+              <p>Movie Name</p>
+              <p>Release: 12/11/2121</p>
+            </div>
+          </li>
+          <li
+            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
+          >
+            <div>
+              <img
+                src="../images/No-Image-Placeholder.svg.png"
+                alt="image not found"
+                height="300"
+                width="300"
+              />
+            </div>
+            <div class="flex flex-col items-center gap-3 pt-2">
+              <p>Movie Name</p>
+              <p>Release: 12/11/2121</p>
+            </div>
+          </li>
+          <li
+            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
+          >
             <div>
               <img
                 src="../images/No-Image-Placeholder.svg.png"
@@ -180,14 +255,35 @@
       <footer
         class="py-5 px-20 mt-10 uppercase flex w-full items-center justify-between"
       >
-        <h1 class="font-bold text-4xl">reelscape</h1>
+        <img
+          src="../images/film-reel.png"
+          alt="reelscape"
+          height="70"
+          width="70"
+          class="cursor-pointer"
+        />
         <div
           id="social-icons"
           class="text-white flex items-center justify-between gap-8 text-lg cursor-pointer font-bold"
         >
-          <p>Facebook</p>
-          <p>Twitter</p>
-          <p>Instagram</p>
+          <img
+            src="../images/facebook.png"
+            alt="facebook"
+            height="45"
+            width="45"
+          />
+          <img
+            src="../images/instagram.png"
+            alt="facebook"
+            height="45"
+            width="45"
+          />
+          <img
+            src="../images/twitter.png"
+            alt="facebook"
+            height="45"
+            width="45"
+          />
         </div>
       </footer>
     </main>

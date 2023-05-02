@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./dist/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        customFont: "'Cabin Sketch','Poppins','Montserrat Alternates',serif",
+      },
+    },
   },
   plugins: [],
 };

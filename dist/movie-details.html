@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" class="box-border overflow-x-hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Braah+One&family=Cabin+Sketch:wght@400;700&family=Montserrat+Alternates:wght@400;600;800&family=Poppins:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Movie Details</title>
+  </head>
+  <body class="min-h-screen overflow-x-hidden font-customFont">
+    <nav
+      class="text-white bg-slate-800 px-10 py-2 flex justify-between items-center sticky top-0 z-10"
+    >
+      <div class="flex items-center gap-2 cursor-pointer">
+        <img
+          src="../images/film-reel.png"
+          alt="reelscape"
+          height="60"
+          width="70"
+        />
+        <h2 class="uppercase font-bold text-2xl">ReelScape</h2>
+      </div>
+      <div>
+        <ul class="flex items-center gap-3 text-xl cursor-pointer">
+          <li class="text-white hover:text-yellow-300">Movies</li>
+          <li class="text-white hover:text-yellow-300">TVShows</li>
+        </ul>
+      </div>
+    </nav>
+    <main class="flex flex-col bg-slate-800 text-white pt-8 gap-10 h-full">
+      <button
+        class="self-start border-solid border-2 border-yellow-300 px-5 py-2 ml-4 rounded-md text-lg hover:scale-[1.04] transition duration-150 hover:ease-in"
+      >
+        Back To Movies
+      </button>
+      <section
+        class="flex items-center justify-center my-2 mx-auto w-[98%] px-10 h-auto gap-10"
+      >
+        <img
+          src="../images/No-Image-Placeholder.svg.png"
+          alt="image placeholder"
+          class="h-auto w-[500px]"
+        />
+        <div class="flex flex-col gap-2 h-full self-start">
+          <h2 class="text-center text-2xl font-bold uppercase">Movie Title</h2>
+          <p>Rating: 8/10</p>
+          <h3>Release Date: XX/XX/XXXX</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem,
+            eius. Voluptates earum harum quae deleniti itaque nihil corrupti
+            doloremque incidunt dicta unde! Temporibus eaque voluptates tempora?
+            Dolorum dignissimos dicta quod? doloremque incidunt dicta unde!
+            Temporibus eaque voluptates tempora? Dolorum dignissimos dicta quod?
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem,
+            eius. Voluptates earum harum quae deleniti itaque nihil corrupti
+            doloremque incidunt dicta unde! Temporibus eaque voluptates tempora?
+          </p>
+          <h2>Genres</h2>
+          <h3>Genre 1</h3>
+          <h3>Genre 2</h3>
+          <h3>Genre 3</h3>
+          <button
+            class="self-start border-solid border-2 border-yellow-400 py-2 px-5 mt-4 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in"
+          >
+            Visit Movie Homepage
+          </button>
+        </div>
+      </section>
+      <article>
+        <h1 class="text-3xl uppercase text-center font-extrabold">
+          Movie Info
+        </h1>
+        <div class="my-1 mx-auto w-[98%]">
+          <div>
+            <span
+              class="text-yellow-400 block border-slate-10 border-b-2 pb-2 pl-2 font-medium mt-2 text-left"
+              >Budget: <strong class="text-white">$1,000,000</strong>
+            </span>
+
+            <span
+              class="text-yellow-400 block border-slate-10 border-b-2 pb-2 pl-2 font-medium mt-2 text-left"
+              >Revenue: <strong class="text-white">$1,000,000</strong>
+            </span>
+
+            <span
+              class="text-yellow-400 block border-slate-10 border-b-2 pb-2 pl-2 font-medium mt-2 text-left"
+              >Runtime: <strong class="text-white">90 minutes</strong>
+            </span>
+            <span
+              class="text-yellow-400 block border-slate-10 border-b-2 pb-2 pl-2 font-medium mt-2 text-left"
+              >Status: <strong class="text-white">Released</strong>
+            </span>
+          </div>
+          <br />
+          <div>
+            <h3 class="font-medium text-xl">Production Companies</h3>
+            <span>Company1,</span>
+            <span>Company2,</span>
+            <span>Company3</span>
+          </div>
+        </div>
+      </article>
+      <footer
+        class="py-5 px-20 mt-10 uppercase flex w-full items-center justify-between"
+      >
+        <h1 class="font-bold text-4xl">reelscape</h1>
+        <div
+          id="social-icons"
+          class="text-white flex items-center justify-between gap-8 text-lg cursor-pointer font-bold"
+        >
+          <p>Facebook</p>
+          <p>Twitter</p>
+          <p>Instagram</p>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
