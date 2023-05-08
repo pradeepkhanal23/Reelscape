@@ -1,3 +1,17 @@
 @tailwind base;
-@tailwind component;
+@tailwind components;
 @tailwind utilities;
+
+.active {
+  @apply text-yellow-300 font-bold;
+}
+
+.movie-card {
+  @apply p-3 rounded-lg m-5 flex flex-col items-center justify-center hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer;
+}
+
+@layer base {
+  html {
+    font-family: "Sen", "Cabin Sketch", "Poppins", system-ui, sans-serif;
+  }
+}

@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="./output.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="../src/app.js" defer></script>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Braah+One&family=Cabin+Sketch:wght@400;700&family=Inter:wght@200;400;600;900&family=Montserrat+Alternates:wght@400;600;800&family=Poppins:wght@300;400;600;800&family=Sen:wght@400;700;800&display=swap"
       rel="stylesheet"
@@ -13,26 +15,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body class="font-customFont">
+  <body class="min-h-screen font-customFont">
     <nav
-      class="sticky top-0 z-10 flex items-center justify-between w-full px-5 py-4 text-white bg-slate-800"
+      class="sticky top-0 left-0 z-10 flex items-center justify-between w-full px-3 py-4 text-white bg-slate-800"
     >
-      <div class="flex items-center cursor-pointer">
-        <img
-          src="../images/film-reel.png"
-          alt="reelscape"
-          height="50"
-          width="50"
-          class="md:scale-[1.2]"
-        />
-        <h2 class="font-bold uppercase text-md md:text-2xl md:ml-2">
-          ReelScape
-        </h2>
-      </div>
+      <a href="./index.html" id="homepage">
+        <div class="flex items-center cursor-pointer">
+          <img
+            src="../images/film-reel.png"
+            alt="reelscape"
+            height="50"
+            width="50"
+            class="md:scale-[1.2]"
+          />
+          <h2 class="font-bold uppercase text-md md:text-2xl md:ml-2">
+            ReelScape
+          </h2>
+        </div>
+      </a>
       <div>
         <ul class="flex items-center gap-3 cursor-pointer text-md md:text-2xl">
-          <li class="mr-1 text-white hover:text-yellow-300">Movies</li>
-          <li class="mr-1 text-white hover:text-yellow-300">TVShows</li>
+          <a href="./index.html">
+            <li class="mr-1 text-white hover:text-yellow-300">Movies</li>
+          </a>
+          <a href="./shows.html">
+            <li class="mr-1 text-white hover:text-yellow-300">TVShows</li>
+          </a>
         </ul>
       </div>
     </nav>
@@ -44,200 +52,68 @@
         <ul
           class="flex w-[95%] mt-10 mx-auto flex-wrap items-center justify-center gap-5"
         >
-          <li
-            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
-          >
-            <div>
-              <img
-                src="../images/No-Image-Placeholder.svg.png"
-                alt="image not found"
-                height="300"
-                width="300"
-              />
-            </div>
-            <div class="flex flex-col items-center gap-3 pt-2">
-              <p class="text-lg font-bold">Show Title</p>
-              <p>Aired: 12/11/2121</p>
-            </div>
-          </li>
-          <li
-            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
-          >
-            <div>
-              <img
-                src="../images/No-Image-Placeholder.svg.png"
-                alt="image not found"
-                height="300"
-                width="300"
-              />
-            </div>
-            <div class="flex flex-col items-center gap-3 pt-2">
-              <p class="text-lg font-bold">Show Title</p>
-              <p>Aired: 12/11/2121</p>
-            </div>
-          </li>
-          <li
-            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
-          >
-            <div>
-              <img
-                src="../images/No-Image-Placeholder.svg.png"
-                alt="image not found"
-                height="300"
-                width="300"
-              />
-            </div>
-            <div class="flex flex-col items-center gap-3 pt-2">
-              <p class="text-lg font-bold">Show Title</p>
-              <p>Aired: 12/11/2121</p>
-            </div>
-          </li>
-          <li
-            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
-          >
-            <div>
-              <img
-                src="../images/No-Image-Placeholder.svg.png"
-                alt="image not found"
-                height="300"
-                width="300"
-              />
-            </div>
-            <div class="flex flex-col items-center gap-3 pt-2">
-              <p class="text-lg font-bold">Show Title</p>
-              <p>Aired: 12/11/2121</p>
-            </div>
-          </li>
-          <li
-            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
-          >
-            <div>
-              <img
-                src="../images/No-Image-Placeholder.svg.png"
-                alt="image not found"
-                height="300"
-                width="300"
-              />
-            </div>
-            <div class="flex flex-col items-center gap-3 pt-2">
-              <p class="text-lg font-bold">Show Title</p>
-              <p>Aired: 12/11/2121</p>
-            </div>
-          </li>
-          <li
-            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
-          >
-            <div>
-              <img
-                src="../images/No-Image-Placeholder.svg.png"
-                alt="image not found"
-                height="300"
-                width="300"
-              />
-            </div>
-            <div class="flex flex-col items-center gap-3 pt-2">
-              <p class="text-lg font-bold">Show Title</p>
-              <p>Aired: 12/11/2121</p>
-            </div>
-          </li>
-          <li
-            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
-          >
-            <div>
-              <img
-                src="../images/No-Image-Placeholder.svg.png"
-                alt="image not found"
-                height="300"
-                width="300"
-              />
-            </div>
-            <div class="flex flex-col items-center gap-3 pt-2">
-              <p class="text-lg font-bold">Show Title</p>
-              <p>Aired: 12/11/2121</p>
-            </div>
-          </li>
-          <li
-            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
-          >
-            <div>
-              <img
-                src="../images/No-Image-Placeholder.svg.png"
-                alt="image not found"
-                height="300"
-                width="300"
-              />
-            </div>
-            <div class="flex flex-col items-center gap-3 pt-2">
-              <p class="text-lg font-bold">Show Title</p>
-              <p>Aired: 12/11/2121</p>
-            </div>
-          </li>
-          <li
-            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
-          >
-            <div>
-              <img
-                src="../images/No-Image-Placeholder.svg.png"
-                alt="image not found"
-                height="300"
-                width="300"
-              />
-            </div>
-            <div class="flex flex-col items-center gap-3 pt-2">
-              <p class="text-lg font-bold">Show Title</p>
-              <p>Aired: 12/11/2121</p>
-            </div>
-          </li>
-          <li
-            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
-          >
-            <div>
-              <img
-                src="../images/No-Image-Placeholder.svg.png"
-                alt="image not found"
-                height="300"
-                width="300"
-              />
-            </div>
-            <div class="flex flex-col items-center gap-3 pt-2">
-              <p class="text-lg font-bold">Show Title</p>
-              <p>Aired: 12/11/2121</p>
-            </div>
-          </li>
+          <a href="./tv-details.html">
+            <li
+              class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
+            >
+              <div>
+                <img
+                  src="../images/No-Image-Placeholder.svg.png"
+                  alt="image not found"
+                  height="300"
+                  width="300"
+                />
+              </div>
+              <div class="flex flex-col items-center gap-3 pt-2">
+                <p class="text-lg font-bold">Show Title</p>
+                <p>Aired: 12/11/2121</p>
+              </div>
+            </li>
+          </a>
         </ul>
       </section>
       <footer
         class="flex items-center justify-between w-full px-5 py-5 mt-10 uppercase"
       >
-        <img
-          src="../images/film-reel.png"
-          alt="reelscape"
-          height="50"
-          width="50"
-          class="cursor-pointer md:scale-[1.2]"
-        />
+        <a href="./index.html">
+          <img
+            src="../images/film-reel.png"
+            alt="reelscape"
+            height="50"
+            width="50"
+            class="cursor-pointer md:scale-[1.2]"
+          />
+        </a>
         <div
           id="social-icons"
           class="flex items-center justify-between gap-3 cursor-pointer md:gap-5"
         >
-          <img
-            src="../images/facebook.png"
-            alt="facebook"
-            height="35"
-            width="35"
-          />
-          <img
-            src="../images/instagram.png"
-            alt="facebook"
-            height="35"
-            width="35"
-          />
-          <img
-            src="../images/twitter.png"
-            alt="facebook"
-            height="35"
-            width="35"
-          />
+          <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
+            <img
+              src="../images/facebook.png"
+              alt="facebook"
+              height="35"
+              width="35"
+            />
+          </a>
+
+          <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
+            <img
+              src="../images/instagram.png"
+              alt="facebook"
+              height="35"
+              width="35"
+            />
+          </a>
+
+          <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
+            <img
+              src="../images/twitter.png"
+              alt="facebook"
+              height="35"
+              width="35"
+            />
+          </a>
         </div>
       </footer>
     </main>

@@ -1,50 +1,71 @@
 <!DOCTYPE html>
-<html lang="en" class="font-[100%] box-border overflow-x-hidden">
+<html lang="en" class="box-border scroll-smooth p-0 m-0 overflow-x-hidden">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="./output.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="precoannect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Braah+One&family=Cabin+Sketch:wght@400;700&family=Inter:wght@200;400;600;900&family=Montserrat+Alternates:wght@400;600;800&family=Poppins:wght@300;400;600;800&family=Sen:wght@400;700;800&display=swap"
       rel="stylesheet"
     />
+    <script src="../src/app.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homepage</title>
+    <title>Home</title>
   </head>
-  <body class="font-customFont overflow-x-hidden">
-    <nav
-      class="text-white bg-slate-800 px-3 py-4 w-full flex justify-between items-center sticky top-0 z-10"
-    >
-      <div class="flex items-center cursor-pointer">
-        <img
-          src="../images/film-reel.png"
-          alt="reelscape"
-          height="50"
-          width="50"
-          class="md:scale-[1.2]"
-        />
-        <h2 class="uppercase font-bold text-md md:text-2xl md:ml-2">
-          ReelScape
-        </h2>
-      </div>
-      <div>
-        <ul class="flex items-center gap-3 text-md cursor-pointer md:text-2xl">
-          <li class="text-white hover:text-yellow-300 mr-1">Movies</li>
-          <li class="text-white hover:text-yellow-300 mr-1">TVShows</li>
-        </ul>
-      </div>
-    </nav>
-    <main class="bg-slate-800 text-white h-auto">
+  <body
+    class="min-h-screen overflow-x-hidden font-customFont text-base md:text-xl text-white bg-slate-800"
+  >
+    <header>
+      <!-- ------------------NAVBAR------------------------------------------ -->
+      <nav
+        class="flex items-center justify-between w-full px-6 py-4 text-white bg-slate-800"
+      >
+        <a href="./index.html" id="homepage">
+          <div class="flex items-center cursor-pointer">
+            <img
+              src="../images/film-reel.png"
+              alt="reelscape"
+              height="50"
+              width="50"
+              class="md:scale-[1.3]"
+            />
+            <h2
+              class="font-bold uppercase md:ml-2 hidden md:block lg:text-[2rem]"
+            >
+              ReelScape
+            </h2>
+          </div>
+        </a>
+        <div>
+          <ul class="flex items-center gap-3 cursor-pointer">
+            <a href="./index.html">
+              <li class="mr-1">Movies</li>
+            </a>
+            <a href="/dist/shows.html">
+              <li class="mr-1">TVShows</li>
+            </a>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- ------------------NAVBAR  ENDS------------------------------------------ -->
+    </header>
+
+    <!-- ----------------------------------SHOWCASE----------------------------------------------- -->
+
+    <main>
       <div
-        class="h-96 pt-5 bg-cover bg-center"
+        class="pt-5 bg-center bg-cover bg-no-repeat h-96"
         style="background-image: url('../images/reel-showcase.jpg')"
       >
-        <h1 class="text-md text-center font-bold uppercase pt-10 md:text-2xl">
-          Now Playing
-        </h1>
+        <h1 class="pt-10 font-bold text-center uppercase">Now Playing</h1>
       </div>
+
+      <!-- --------------------------------SHOWCASE END------------------------------------------------ -->
+
+      <!-- ------------------------------SEARCH AREA--------------------------------------- -->
       <article
         class="mx-auto my-10 w-[98%] p-3 flex items-center justify-center"
       >
@@ -56,209 +77,57 @@
           <input type="radio" id="tv-shows" name="movies"
         </div>
         <form
-          class="mt-5 mb-10 w-full flex flex-col items-center gap-5 md:flex-row"
+          class="flex flex-col items-center w-screen gap-5 mt-5 mb-10 md:flex-row md:items-center md:justify-center px-8"
         >
           <input
             type="text"
             id="user-input"
             placeholder="Enter movie name...."
-            class="w-[350px] px-4 py-2.5 border-2 rounded-md border-white bg-transparent focus:outline-yellow-100 md:w-[500px]"
+            class="w-[80%] px-4 py-2.5 border-2 rounded-md border-white bg-transparent focus:outline-yellow-100 md:w-[60%] lg:w-[40%]"
           />
-          <button
-            class="text-white text-md bg-[#2b4259] px-6 py-2.5 w-full rounded-md border-2 border-white md:w-[20%]"
+          <a
+            href="./search.html"
+            class="text-white bg-[#2b4259] px-5 py-2.5 w-[30%] rounded-md border-2 border-white md:w-[20%] lg:w-[10%]"
           >
             Search
-          </button>
+          </a>
         </form>
       </article>
-      <section id="popular-movies" class="mt-2">
-        <h1 class="text-center font-bold text-2xl uppercase tracking-wider">
-          Popular Movies
-        </h1>
-        <ul
-          class="flex w-full mt-5 mx-auto flex-wrap items-center justify-center gap-5"
-        >
-          <li
-            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
-          >
-            <div>
-              <img
-                src="../images/No-Image-Placeholder.svg.png"
-                alt="image not found"
-                height="300"
-                width="300"
-              />
-            </div>
-            <div class="flex flex-col items-center gap-3 pt-2">
-              <p>Movie Name</p>
-              <p>Release: 12/11/2121</p>
-            </div>
-          </li>
-          <li
-            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
-          >
-            <div>
-              <img
-                src="../images/No-Image-Placeholder.svg.png"
-                alt="image not found"
-                height="300"
-                width="300"
-              />
-            </div>
-            <div class="flex flex-col items-center gap-3 pt-2">
-              <p>Movie Name</p>
-              <p>Release: 12/11/2121</p>
-            </div>
-          </li>
-          <li
-            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
-          >
-            <div>
-              <img
-                src="../images/No-Image-Placeholder.svg.png"
-                alt="image not found"
-                height="300"
-                width="300"
-              />
-            </div>
-            <div class="flex flex-col items-center gap-3 pt-2">
-              <p>Movie Name</p>
-              <p>Release: 12/11/2121</p>
-            </div>
-          </li>
-          <li
-            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
-          >
-            <div>
-              <img
-                src="../images/No-Image-Placeholder.svg.png"
-                alt="image not found"
-                height="300"
-                width="300"
-              />
-            </div>
-            <div class="flex flex-col items-center gap-3 pt-2">
-              <p>Movie Name</p>
-              <p>Release: 12/11/2121</p>
-            </div>
-          </li>
-          <li
-            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
-          >
-            <div>
-              <img
-                src="../images/No-Image-Placeholder.svg.png"
-                alt="image not found"
-                height="300"
-                width="300"
-              />
-            </div>
-            <div class="flex flex-col items-center gap-3 pt-2">
-              <p>Movie Name</p>
-              <p>Release: 12/11/2121</p>
-            </div>
-          </li>
-          <li
-            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
-          >
-            <div>
-              <img
-                src="../images/No-Image-Placeholder.svg.png"
-                alt="image not found"
-                height="300"
-                width="300"
-              />
-            </div>
-            <div class="flex flex-col items-center gap-3 pt-2">
-              <p>Movie Name</p>
-              <p>Release: 12/11/2121</p>
-            </div>
-          </li>
-          <li
-            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
-          >
-            <div>
-              <img
-                src="../images/No-Image-Placeholder.svg.png"
-                alt="image not found"
-                height="300"
-                width="300"
-              />
-            </div>
-            <div class="flex flex-col items-center gap-3 pt-2">
-              <p>Movie Name</p>
-              <p>Release: 12/11/2121</p>
-            </div>
-          </li>
-          <li
-            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
-          >
-            <div>
-              <img
-                src="../images/No-Image-Placeholder.svg.png"
-                alt="image not found"
-                height="300"
-                width="300"
-              />
-            </div>
-            <div class="flex flex-col items-center gap-3 pt-2">
-              <p>Movie Name</p>
-              <p>Release: 12/11/2121</p>
-            </div>
-          </li>
-          <li
-            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
-          >
-            <div>
-              <img
-                src="../images/No-Image-Placeholder.svg.png"
-                alt="image not found"
-                height="300"
-                width="300"
-              />
-            </div>
-            <div class="flex flex-col items-center gap-3 pt-2">
-              <p>Movie Name</p>
-              <p>Release: 12/11/2121</p>
-            </div>
-          </li>
-          <li
-            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
-          >
-            <div>
-              <img
-                src="../images/No-Image-Placeholder.svg.png"
-                alt="image not found"
-                height="300"
-                width="300"
-              />
-            </div>
-            <div class="flex flex-col items-center gap-3 pt-2">
-              <p>Movie Name</p>
-              <p>Release: 12/11/2121</p>
-            </div>
-          </li>
-          <li
-            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
-          >
-            <div>
-              <img
-                src="../images/No-Image-Placeholder.svg.png"
-                alt="image not found"
-                height="300"
-                width="300"
-              />
-            </div>
-            <div class="flex flex-col items-center gap-3 pt-2">
-              <p>Movie Name</p>
-              <p>Release: 12/11/2121</p>
-            </div>
-          </li>
-        </ul>
-      </section>
-      <footer
-        class="py-5 px-5 mt-10 uppercase flex w-full items-center justify-between"
+    </main>
+
+    <!-- ----------------------------SEARCH AREA END------------------------------------------------ -->
+
+    <h1
+      class="mb-5 font-bold tracking-wider text-center uppercase md:text-[2rem]"
+    >
+      Popular Movies
+    </h1>
+
+    <section id="popular-movies">
+      <ul
+        id="popular-movies-container"
+        class="flex flex-wrap items-center justify-center w-[90%] mx-auto my-0"
       >
+        <!-- <li class="movie-card">
+          <div class="flex items-center justify-center h-auto w-[350px]">
+            <img
+              src="../images/No-Image-Placeholder.svg.png"
+              alt="${title}"
+              height="300"
+              width="300"
+            />
+          </div>
+          <div class="flex flex-col items-center gap-3 pt-2">
+            <p class="text-center">${title}</p>
+            <p class="text-center">Release: ${release_date}</p>
+          </div>
+        </li> -->
+      </ul>
+    </section>
+    <footer
+      class="flex items-center justify-between w-full px-[2rem] py-5 mt-10 uppercase"
+    >
+      <a href="#homepage">
         <img
           src="../images/film-reel.png"
           alt="reelscape"
@@ -266,30 +135,38 @@
           width="50"
           class="cursor-pointer md:scale-[1.2]"
         />
-        <div
-          id="social-icons"
-          class="flex items-center justify-between gap-3 cursor-pointer md:gap-5"
-        >
+      </a>
+      <div
+        id="social-icons"
+        class="flex items-center justify-between gap-3 cursor-pointer md:gap-5"
+      >
+        <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
           <img
             src="../images/facebook.png"
             alt="facebook"
             height="35"
             width="35"
           />
+        </a>
+
+        <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
           <img
             src="../images/instagram.png"
             alt="facebook"
             height="35"
             width="35"
           />
+        </a>
+
+        <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
           <img
             src="../images/twitter.png"
             alt="facebook"
             height="35"
             width="35"
           />
-        </div>
-      </footer>
-    </main>
+        </a>
+      </div>
+    </footer>
   </body>
 </html>
