@@ -8,171 +8,108 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script src="../src/app.js" defer></script>
-
     <link
       href="https://fonts.googleapis.com/css2?family=Braah+One&family=Cabin+Sketch:wght@400;700&family=Inter:wght@200;400;600;900&family=Montserrat+Alternates:wght@400;600;800&family=Poppins:wght@300;400;600;800&family=Sen:wght@400;700;800&display=swap"
       rel="stylesheet"
     />
     <title>TV Details</title>
   </head>
-  <body class="min-h-screen font-customFont">
-    <nav
-      class="sticky top-0 left-0 z-10 flex items-center justify-between w-full px-3 py-4 text-white bg-slate-800"
-    >
-      <a href="./index.html" id="homepage">
-        <div class="flex items-center cursor-pointer">
-          <img
-            src="../images/film-reel.png"
-            alt="reelscape"
-            height="50"
-            width="50"
-            class="md:scale-[1.2]"
-          />
-          <h2 class="font-bold uppercase text-md md:text-2xl md:ml-2">
-            ReelScape
-          </h2>
+  <body
+    class="min-h-screen overflow-x-hidden font-customFont text-base md:text-xl text-white bg-slate-800"
+  >
+    <header>
+      <!-- -------------------------------NAVBAR STARTED-------------------------------------------------- -->
+      <nav
+        class="flex items-center justify-between w-full px-6 py-4 text-white bg-slate-800"
+      >
+        <a href="./index.html" id="homepage">
+          <div class="flex items-center cursor-pointer">
+            <img
+              src="../images/film-reel.png"
+              alt="reelscape"
+              height="50"
+              width="50"
+              class="md:scale-[1.3]"
+            />
+            <h2
+              class="font-bold uppercase md:ml-2 hidden md:block lg:text-[2rem]"
+            >
+              ReelScape
+            </h2>
+          </div>
+        </a>
+        <div>
+          <ul class="flex items-center gap-3 cursor-pointer">
+            <a href="./index.html">
+              <li class="mr-1">Movies</li>
+            </a>
+            <a href="/dist/shows.html">
+              <li class="mr-1">TVShows</li>
+            </a>
+          </ul>
         </div>
-      </a>
-      <div>
-        <ul class="flex items-center gap-3 cursor-pointer text-md md:text-2xl">
-          <a href="./index.html">
-            <li class="mr-1 text-white hover:text-yellow-300">Movies</li>
-          </a>
-          <a href="./shows.html">
-            <li class="mr-1 text-white hover:text-yellow-300">TVShows</li>
-          </a>
-        </ul>
-      </div>
-    </nav>
-    <main class="flex flex-col h-full gap-10 pt-8 text-white bg-slate-800">
+      </nav>
+      <!-- -------------------------------NAVBAR ENDED-------------------------------------------------- -->
+    </header>
+
+    <main
+      class="flex flex-col h-full w-full gap-10 pt-8 text-white bg-slate-800"
+    >
       <a
-        href="./shows.html"
-        class="self-start border-solid border-2 border-yellow-300 px-5 py-2 ml-4 rounded-md text-sm hover:scale-[1.04] transition duration-150 hover:ease-in md:text-lg"
+        href="shows.html"
+        class="self-start border-solid border-2 border-yellow-300 px-5 py-2 ml-4 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in"
       >
         Back To TV Shows
       </a>
-      <section
-        class="flex flex-col items-center justify-center my-2 mx-auto w-[98%] px-5 h-auto gap-2 md:flex-row"
-      >
+
+      <!-- -- ----------------------------------------SHOWCAS SECTION------------------------------------------ -->
+
+      <div id="show-details"></div>
+      <article id="show-info"></article>
+    </main>
+    <footer
+      class="flex items-center justify-between w-full px-[2rem] py-5 mt-10 uppercase"
+    >
+      <a href="#homepage">
         <img
-          src="../images/No-Image-Placeholder.svg.png"
-          alt="image placeholder"
-          class="h-auto w-[60%] md:w-[40%] lg:w-[37%]"
+          src="../images/film-reel.png"
+          alt="reelscape"
+          height="50"
+          width="50"
+          class="cursor-pointer md:scale-[1.2]"
         />
-        <div
-          class="flex flex-col items-center h-full gap-2 px-5 lg:self-start md:self-center md:items-start md:gap-1 lg:text-lg lg:gap-3 lg:py-10"
-        >
-          <h2
-            class="font-bold tracking-wider text-center uppercase text-md md:text-lg lg:text-xl"
-          >
-            Show Name
-          </h2>
-          <div class="flex items-center gap-2">
-            <img src="../images/star.png" alt="star" height="20" width="20" />
-            <p class="text-lg">8 / 10</p>
-          </div>
-          <h3 class="text-lg lg:text-xl">Release Date: XX/XX/XXXX</h3>
-          <p class="text-justify md:text-md lg:text-lg">
-            <em>
-              For the geeky, for the nerdy, for the true cinema believers, this
-              one’s for you. A mass of quite interesting factoids abut your
-              favourite flicks that you can pass off in pubs up and down the
-              land to either the choruses of cheers, hails of boos or the polite
-              nod. The number of facts? Why, it’s a third of Frank Miller’s 300,
-              a dozen mph short of the speed needed for DeLorean time travel and
-              8.3 times the number of Angry Men
-            </em>
-          </p>
-          <h2 class="text-lg font-bold">Genres</h2>
-          <h3>Genre 1</h3>
-          <h3>Genre 2</h3>
-          <h3>Genre 3</h3>
-        </div>
-      </section>
-      <a
-        href="./index.html"
-        class="self-start border-solid border-2 border-yellow-300 px-5 py-2 ml-4 rounded-md text-sm hover:scale-[1.04] transition duration-150 hover:ease-in md:text-lg"
-      >
-        Visit Show Homepage
       </a>
-
-      <article>
-        <h1 class="text-lg font-extrabold text-center uppercase md:text-2xl">
-          Show Info
-        </h1>
-        <div class="my-1 mx-auto w-[98%]">
-          <div>
-            <span
-              class="block pb-2 pl-2 mt-2 font-medium text-center text-yellow-400 border-b-2 border-slate-10 md:text-xl md:text-left"
-              >No Of Episodes: <strong class="text-white">50</strong>
-            </span>
-
-            <span
-              class="block pb-2 pl-2 mt-2 font-medium text-center text-yellow-400 border-b-2 border-slate-10 md:text-xl md:text-left"
-              >Last Episode To Air:
-              <strong class="text-white"> Last Aired Show Episode</strong>
-            </span>
-
-            <span
-              class="block pb-2 pl-2 mt-2 font-medium text-center text-yellow-400 border-b-2 border-slate-10 md:text-xl md:text-left"
-              >Status: <strong class="text-white">Released</strong>
-            </span>
-          </div>
-          <br />
-          <div>
-            <h3 class="pl-2 text-xl font-medium md:text-2xl">
-              Production Companies
-            </h3>
-            <span class="pl-2 text-md">Company1,</span>
-            <span class="pl-2 text-md">Company2,</span>
-            <span class="pl-2 text-md">Company3</span>
-          </div>
-        </div>
-      </article>
-      <footer
-        class="flex items-center justify-between w-full px-5 py-5 mt-10 uppercase"
+      <div
+        id="social-icons"
+        class="flex items-center justify-between gap-3 cursor-pointer md:gap-5"
       >
-        <a href="./index.html">
+        <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
           <img
-            src="../images/film-reel.png"
-            alt="reelscape"
-            height="50"
-            width="50"
-            class="cursor-pointer md:scale-[1.2]"
+            src="../images/facebook.png"
+            alt="facebook"
+            height="35"
+            width="35"
           />
         </a>
-        <div
-          id="social-icons"
-          class="flex items-center justify-between gap-3 cursor-pointer md:gap-5"
-        >
-          <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
-            <img
-              src="../images/facebook.png"
-              alt="facebook"
-              height="35"
-              width="35"
-            />
-          </a>
 
-          <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
-            <img
-              src="../images/instagram.png"
-              alt="facebook"
-              height="35"
-              width="35"
-            />
-          </a>
+        <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
+          <img
+            src="../images/instagram.png"
+            alt="facebook"
+            height="35"
+            width="35"
+          />
+        </a>
 
-          <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
-            <img
-              src="../images/twitter.png"
-              alt="facebook"
-              height="35"
-              width="35"
-            />
-          </a>
-        </div>
-      </footer>
-    </main>
+        <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
+          <img
+            src="../images/twitter.png"
+            alt="facebook"
+            height="35"
+            width="35"
+          />
+        </a>
+      </div>
+    </footer>
   </body>
 </html>
