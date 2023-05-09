@@ -36,9 +36,9 @@ async function getMovieDetails() {
     production_companies,
   } = await fetchAPIData(`movie/${movieId}`);
 
-  console.log(backdrop_path);
-
   const div = document.querySelector("#movie-details");
+
+  displayBackdropImage("movie", backdrop_path);
 
   div.innerHTML = `
    <section class="container mx-auto p-3 ">
@@ -153,10 +153,10 @@ async function getShowDetails() {
     overview,
     production_companies,
   } = show;
-  console.log(show);
-  console.log(poster_path);
 
   const div = document.querySelector("#show-details");
+
+  displayBackdropImage("show", backdrop_path);
 
   div.innerHTML = `
    <section class="container mx-auto p-3 ">
@@ -416,6 +416,39 @@ function initSwiper() {
 }
 
 // Displaying backdrop on movie/show details page
+function displayBackdropImage(type, imagePath) {
+  const backdropDiv = document.createElement("div");
+
+  let classesToAdd = [
+    "overlay",
+    "absolute",
+    "top-0",
+    "left-0",
+    "bg-center",
+    "bg-cover",
+    "bg-no-repeat",
+    "h-full",
+    "w-full",
+    "-z-10",
+    "opacity-10",
+  ];
+
+  backdropDiv.classList.add(...classesToAdd);
+  backdropDiv.innerHTML = `
+     <img
+          src="https://image.tmdb.org/t/p/original${imagePath}"
+          alt="overlay"
+          class="object-cover"
+        />
+  `;
+
+  if (type === "movie") {
+    document.querySelector("#movie-details-main").appendChild(backdropDiv);
+  } else {
+    document.querySelector("#tv-details-main").appendChild(backdropDiv);
+  }
+}
+
 async function fetchAPIData(endpoint) {
   // example api request
   // https://api.themoviedb.org/3/movie/550?api_key=863e6b16482d1bfa21ee50f9fcd54b5e
