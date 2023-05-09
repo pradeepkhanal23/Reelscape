@@ -99,14 +99,16 @@ async function getMovieDetails() {
           <div>
             <span
               class="block pb-2 pl-2 mt-2 font-medium text-center text-yellow-400 border-b-2 border-slate-10 md:text-left"
-              >Budget: <strong class="text-white">$${addCommas(budget)}</strong>
+              >Budget: <strong class="text-white">${
+                budget === 0 ? "N/A" : "$" + addCommas(budget)
+              }</strong>
             </span>
 
             <span
               class="block pb-2 pl-2 mt-2 font-medium text-center text-yellow-400 border-b-2 border-slate-10 md:text-left"
-              >Revenue: <strong class="text-white">$${addCommas(
-                revenue
-              )}</strong>
+              >Revenue: <strong class="text-white">${
+                revenue === 0 ? "N/A" : "$" + addCommas(revenue)
+              }</strong>
             </span>
 
             <span
@@ -263,7 +265,7 @@ async function getPopularMovies() {
     anchor.setAttribute("href", `./movie-details.html?id=${id}`);
     anchor.innerHTML = `
     <li class="movie-card" >
-        <div class='flex items-center justify-center h-auto w-[350px]'>
+        <div class='flex items-center justify-center h-auto w-[400px]'>
               ${
                 poster_path
                   ? `
@@ -271,6 +273,8 @@ async function getPopularMovies() {
             src='https://image.tmdb.org/t/p/w500${poster_path}'
             alt="${title}"
             class="border-2 border-white"
+             height="350"
+            width="350"
             
            
                 />
@@ -279,8 +283,8 @@ async function getPopularMovies() {
             <img
             src='../images/No-Image-Placeholder.svg.png'
             alt="${title}"
-            height="300"
-            width="300"
+            height="350"
+            width="350"
           />
                     `
               }
@@ -318,12 +322,9 @@ async function getPopularTVShows() {
             src='https://image.tmdb.org/t/p/w500${poster_path}'
             alt="${name}"
             class="border-2 border-white"
-            
-           
-                />
-                    `
-                  : `
-            <img
+            height="350"
+            width="350"/>`
+                  : `<img
             src='../images/No-Image-Placeholder.svg.png'
             alt="${name}"
             height="300"
@@ -343,8 +344,78 @@ async function getPopularTVShows() {
   });
 }
 
-// Displaying backdrop on movie/show details page
+//Display Slider Movies
 
+async function displaySlider() {
+  const { results } = await fetchAPIData("movie/now_playing");
+
+  results.forEach((result) => {
+    const { id, poster_path, vote_average, title } = result;
+
+    const div = document.createElement("div");
+    div.classList.add("swiper-slide");
+
+    div.innerHTML = `
+    <div class="flex flex-col items-center justify-center gap-3">
+
+       <a href="./movie-details.html?id=${id}" >
+                <img
+                  src='https://image.tmdb.org/t/p/original${poster_path}'
+                  alt=${title}
+                  class='border-2 border-white object-cover'
+                  height='350'
+                  width='350'
+                />
+              </a>
+              <div class="flex items-center mb-2">
+                <img
+                  src="../images/star.png"
+                  alt="star"
+                  height="20"
+                  width="20"
+                />
+                <span class="ml-2"> ${vote_average.toFixed(2)} / 10</span>
+              </div>
+    
+    </div>`;
+
+    document.querySelector(".swiper-wrapper").appendChild(div);
+
+    initSwiper();
+  });
+}
+
+function initSwiper() {
+  const swiper = new Swiper(".swiper", {
+    slidesPerView: 1,
+    spaceBetween: 40,
+    freeMode: true,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      375: {
+        slidesPerView: 1,
+      },
+      600: {
+        slidesPerView: 2,
+      },
+      900: {
+        slidesPerView: 3,
+      },
+      1200: {
+        slidesPerView: 4,
+      },
+      1400: {
+        slidesPerView: 5,
+      },
+    },
+  });
+}
+
+// Displaying backdrop on movie/show details page
 async function fetchAPIData(endpoint) {
   // example api request
   // https://api.themoviedb.org/3/movie/550?api_key=863e6b16482d1bfa21ee50f9fcd54b5e
@@ -368,6 +439,7 @@ function initialLoading() {
   switch (globalRouter.currentPage) {
     case "/dist/index.html":
       getPopularMovies();
+      displaySlider();
       break;
     case "/dist/shows.html":
       getPopularTVShows();
