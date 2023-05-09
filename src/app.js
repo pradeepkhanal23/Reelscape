@@ -356,18 +356,18 @@ async function displaySlider() {
     div.classList.add("swiper-slide");
 
     div.innerHTML = `
-    <div class="flex flex-col items-center justify-center gap-3">
+    <div class="flex flex-col items-center justify-center gap-3 border-2 border-white bg-slate-800">
 
-       <a href="./movie-details.html?id=${id}" >
+       <a href="./movie-details.html?id=${id}">
                 <img
                   src='https://image.tmdb.org/t/p/original${poster_path}'
                   alt=${title}
-                  class='border-2 border-white object-cover'
+                  class='border-2 border-white object-cover h-full w-full'
                   height='350'
                   width='350'
                 />
               </a>
-              <div class="flex items-center mb-2">
+              <div class="flex items-center mb-2 ">
                 <img
                   src="../images/star.png"
                   alt="star"
@@ -399,7 +399,7 @@ function initSwiper() {
       375: {
         slidesPerView: 1,
       },
-      600: {
+      500: {
         slidesPerView: 2,
       },
       900: {
@@ -427,20 +427,14 @@ function displayBackdropImage(type, imagePath) {
     "bg-center",
     "bg-cover",
     "bg-no-repeat",
-    "h-full",
-    "w-full",
     "-z-10",
     "opacity-10",
+    "h-full",
+    "w-full",
   ];
 
   backdropDiv.classList.add(...classesToAdd);
-  backdropDiv.innerHTML = `
-     <img
-          src="https://image.tmdb.org/t/p/original${imagePath}"
-          alt="overlay"
-          class="object-cover"
-        />
-  `;
+  backdropDiv.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${imagePath})`;
 
   if (type === "movie") {
     document.querySelector("#movie-details-main").appendChild(backdropDiv);
