@@ -17,6 +17,20 @@ function activeLink() {
   });
 }
 
+//loader operations
+
+function showLoader() {
+  document
+    .getElementById("loader-container")
+    .classList.replace("hidden", "flex");
+}
+
+function hideLoader() {
+  document
+    .getElementById("loader-container")
+    .classList.replace("flex", "hidden");
+}
+
 async function getMovieDetails() {
   const movieId = window.location.search.split("=")[1];
 
@@ -374,7 +388,7 @@ async function displaySlider() {
                   height="20"
                   width="20"
                 />
-                <span class="ml-2"> ${vote_average.toFixed(2)} / 10</span>
+                <span class="ml-2"> ${vote_average.toFixed(1)} / 10</span>
               </div>
     
     </div>`;
@@ -449,11 +463,15 @@ async function fetchAPIData(endpoint) {
   const baseUrl = "https://api.themoviedb.org/3/";
   const apiKey = "863e6b16482d1bfa21ee50f9fcd54b5e";
 
+  showLoader();
+
   const response = await fetch(
     `${baseUrl}${endpoint}?api_key=${apiKey}&language=en-US`
   );
 
   const data = await response.json();
+
+  hideLoader();
 
   return data;
 }

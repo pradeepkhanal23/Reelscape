@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .active {
-  @apply text-yellow-300 font-bold;
+  @apply font-bold text-yellow-300;
 }
 
 .movie-card {
