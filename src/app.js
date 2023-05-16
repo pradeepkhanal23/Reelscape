@@ -574,7 +574,8 @@ function displayPagination() {
   document.querySelector("#next").addEventListener("click", async (e) => {
     e.preventDefault();
     global.search.page++;
-    const { results, total_pages } = await fetchSearchDataAPI();
+
+    const { results } = await fetchSearchDataAPI();
 
     displaySearchResults(results);
   });
