@@ -15,3 +15,15 @@
     font-family: "Sen", "Cabin Sketch", "Poppins", system-ui, sans-serif;
   }
 }
+
+.error {
+  @apply w-[95%] h-12 p-3 mx-auto mt-10 bg-red-700 border-2 border-white flex items-center justify-center  md:w-[50%];
+}
+
+.success {
+  @apply w-[95%] h-12 p-3 mx-auto mt-10 bg-green-700 border-2 border-white flex items-center justify-center  md:w-[50%];
+}
+
+.page-btn {
+  @apply border-solid border-2 border-yellow-300 px-5 py-2 ml-4 rounded-md text-lg hover:scale-[1.04] transition duration-150 hover:ease-in;
+}

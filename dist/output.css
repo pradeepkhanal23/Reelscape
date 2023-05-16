@@ -694,6 +694,10 @@ html {
   width: 30%;
 }
 
+.w-\[50\%\] {
+  width: 50%;
+}
+
 .w-\[80\%\] {
   width: 80%;
 }
@@ -965,6 +969,14 @@ html {
   font-size: 1.3rem;
 }
 
+.text-3xl {
+  font-size: 1.953rem;
+}
+
+.text-4xl {
+  font-size: 2.441rem;
+}
+
 .font-\[100\%\] {
   font-weight: 100%;
 }
@@ -997,6 +1009,41 @@ html {
 .text-yellow-400 {
   --tw-text-opacity: 1;
   color: rgb(250 204 21 / var(--tw-text-opacity));
+}
+
+.text-yellow-200 {
+  --tw-text-opacity: 1;
+  color: rgb(254 240 138 / var(--tw-text-opacity));
+}
+
+.text-yellow-800 {
+  --tw-text-opacity: 1;
+  color: rgb(133 77 14 / var(--tw-text-opacity));
+}
+
+.text-yellow-700 {
+  --tw-text-opacity: 1;
+  color: rgb(161 98 7 / var(--tw-text-opacity));
+}
+
+.text-yellow-600 {
+  --tw-text-opacity: 1;
+  color: rgb(202 138 4 / var(--tw-text-opacity));
+}
+
+.text-yellow-100 {
+  --tw-text-opacity: 1;
+  color: rgb(254 249 195 / var(--tw-text-opacity));
+}
+
+.text-yellow-300 {
+  --tw-text-opacity: 1;
+  color: rgb(253 224 71 / var(--tw-text-opacity));
+}
+
+.text-yellow-900 {
+  --tw-text-opacity: 1;
+  color: rgb(113 63 18 / var(--tw-text-opacity));
 }
 
 .opacity-10 {
@@ -1047,6 +1094,52 @@ html {
   --tw-scale-y: 1.04;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+.error {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2.5rem;
+  display: flex;
+  height: 3rem;
+  width: 95%;
+  align-items: center;
+  justify-content: center;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
+  padding: 0.75rem;
+}
+
+@media (min-width: 650px) {
+  .error {
+    width: 50%;
+  }
+}
+
+.success {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2.5rem;
+  display: flex;
+  height: 3rem;
+  width: 95%;
+  align-items: center;
+  justify-content: center;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(21 128 61 / var(--tw-bg-opacity));
+  padding: 0.75rem;
+}
+
+@media (min-width: 650px) {
+  .success {
+    width: 50%;
+  }
 }
 
 .hover\:scale-\[1\.04\]:hover {

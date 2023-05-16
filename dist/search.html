@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script src="../src/app.js" defer></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Braah+One&family=Cabin+Sketch:wght@400;700&family=Inter:wght@200;400;600;900&family=Montserrat+Alternates:wght@400;600;800&family=Poppins:wght@300;400;600;800&family=Sen:wght@400;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Poppins:wght@300;400;600;800&family=Sen:wght@400;700;800&display=swap"
       rel="stylesheet"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -73,74 +73,74 @@
 
     <!-- ------------------NAVBAR  ENDS------------------------------------------ -->
     <main class="w-full h-auto text-white bg-slate-800">
-      <article
-        class="flex items-center justify-center w-full p-3 mx-auto my-10"
+      <!-- ---------------alert div---------------------- -->
+      <div id="alert" class="w-full">
+        <!-- <div class="error">Enter a valid user input</div> -->
+      </div>
+      <!-- ---------------alert div---------------------- -->
+      <form
+        class="mx-auto my-10 w-[98%] p-3 flex items-center justify-center"
+        action="../dist/search.html"
       >
-        <div class="pt-5 text-center">
+        <div class="pt-5 text-center" id="search-radio">
           <label for="movies">Movies</label>
-          <input type="radio" id="movies" name="movies" />
+          <input type="radio" id="movies" name="type" value="movie" checked />
           <span class="mx-2"></span>
           <label for="tv-shows">TV Shows</label>
-          <input type="radio" id="tv-shows" name="movies"
+          <input type="radio" id="tv-shows" name="type" value="tv"
         </div>
-        <form
+        <div
           class="flex flex-col items-center w-screen gap-5 px-8 mt-5 mb-10 md:flex-row md:items-center md:justify-center"
+          id="search-input"
         >
           <input
             type="text"
             id="user-input"
+            name="user-input"
             placeholder="Enter movie name...."
             class="w-[80%] px-4 py-2.5 border-2 rounded-md border-white bg-transparent focus:outline-yellow-100 md:w-[60%] lg:w-[40%]"
           />
-          <a
-            href="./search.html"
+          <button
             class="text-white bg-[#2b4259] px-5 py-2.5 w-[30%] rounded-md border-2 border-white md:w-[20%] lg:w-[10%]"
+            type="submit"
           >
             Search
-          </a>
-        </form>
-      </article>
-      <section id="popular-movies" class="pt-10 mt-30">
-        <ul
-          id="popular-movies-container"
-          class="flex flex-wrap items-center justify-center w-[90%] mx-auto my-0"
+          </button>
+        </div>
+      </form>
+      <section id="search" class="pt-10 mt-30">
+        <div
+          id="search-result-heading"
+          class="text-4xl font-bold text-yellow-200 uppercase"
         >
-          <!-- <li
-            class="border-white border-2 p-2 rounded-md hover:scale-[1.04] transition duration-150 hover:ease-in cursor-pointer"
-          >
-            <div>
-              <img
-                src="../images/No-Image-Placeholder.svg.png"
-                alt="image not found"
-                height="300"
-                width="300"
-              />
-            </div>
-            <div class="flex flex-col items-center gap-3 pt-2">
-              <p class="text-lg font-bold">Show Name</p>
-              <p>Release: 12/11/2121</p>
-            </div>
-          </li> -->
-        </ul>
+          <!-- <h2>20 of 168 results for movies</h2> -->
+        </div>
+        <ul
+          id="search-container"
+          class="flex flex-wrap items-center justify-center w-[90%] mx-auto my-0"
+        ></ul>
       </section>
-      <!-- <div
+
+      <div
         id="pagination"
         class="mt-5 w-[90%] my-0 mx-auto flex flex-col items-center justify-center gap-5"
       >
-        <div>
+        <!-- <div>
           <button
             class="border-solid border-2 border-yellow-300 px-5 py-2 ml-4 rounded-md text-lg hover:scale-[1.04] transition duration-150 hover:ease-in"
+            id='prev'
           >
             Prev
           </button>
           <button
             class="border-solid border-2 border-yellow-300 px-5 py-2 ml-4 rounded-md text-lg hover:scale-[1.04] transition duration-150 hover:ease-in"
+            id="next"
           >
             Next
           </button>
         </div>
-        <p class="text-xl">Page 1 of 5</p>
-      </div> -->
+        <p class="text-xl">Page 1 of 5</p> -->
+      </div>
     </main>
     <footer
       class="flex items-center justify-between w-full px-[2rem] py-5 uppercase"

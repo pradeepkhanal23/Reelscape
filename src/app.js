@@ -2,8 +2,19 @@
 // https://api.themoviedb.org/3/movie/550?api_key=863e6b16482d1bfa21ee50f9fcd54b5e
 
 //Storing pathnames as we need to know which page we are in by accessing the window's location pathname property
-const globalRouter = {
+const global = {
   currentPage: window.location.pathname,
+  api: {
+    baseUrl: "https://api.themoviedb.org/3/",
+    apiKey: "863e6b16482d1bfa21ee50f9fcd54b5e",
+  },
+  search: {
+    type: "",
+    userInput: "",
+    page: 1,
+    totalPages: 1,
+    totalResults: 0,
+  },
 };
 
 //a function to change the styling of the link when its clicked to mimic its active state
@@ -11,10 +22,34 @@ const globalRouter = {
 function activeLink() {
   const links = document.querySelectorAll("nav ul a");
   links.forEach((link) => {
-    if (link.pathname === globalRouter.currentPage) {
+    if (link.pathname === global.currentPage) {
       link.firstElementChild.classList.add("active");
     }
   });
+}
+
+//Alert Function
+function showAlert(message, type = "error") {
+  const parentDiv = document.querySelector("#alert");
+  const alertDiv = document.createElement("div");
+  alertDiv.appendChild(document.createTextNode(message));
+
+  if (type === "error") {
+    alertDiv.classList.add("error");
+    parentDiv.appendChild(alertDiv);
+
+    setTimeout(() => {
+      alertDiv.remove();
+    }, 3000);
+  }
+  if (type === "success") {
+    alertDiv.classList.add("success");
+    parentDiv.appendChild(alertDiv);
+
+    setTimeout(() => {
+      alertDiv.remove();
+    }, 3000);
+  }
 }
 
 //loader operations
@@ -147,7 +182,6 @@ async function getMovieDetails() {
 }
 
 //Display show details
-
 async function getShowDetails() {
   const tvId = window.location.search.split("=")[1];
 
@@ -399,6 +433,150 @@ async function displaySlider() {
   });
 }
 
+// Search functionality on user inputs
+
+// Add an event listener to the form's submit event
+
+async function search() {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+
+  global.search.type = urlParams.get("type");
+  global.search.userInput = urlParams.get("user-input");
+
+  if (global.search.userInput !== "" && global.search.userInput !== null) {
+    const { results, total_pages, page, total_results } =
+      await fetchSearchDataAPI();
+
+    global.search.page = page;
+    global.search.totalPages = total_pages;
+    global.search.totalResults = total_results;
+
+    if (results.length === 0) {
+      showAlert("No results found");
+      return;
+    }
+    displaySearchResults(results);
+    document.querySelector("#user-input").value = "";
+  } else {
+    showAlert("Please enter a valid input");
+  }
+}
+
+//Search results display
+async function displaySearchResults(results) {
+  results.forEach((result) => {
+    const ul = document.querySelector("#search-container");
+    const anchor = document.createElement("a");
+    anchor.setAttribute(
+      "href",
+      `./${global.search.type}-details.html?id=${result.id}`
+    );
+    anchor.innerHTML = `
+     <li class="movie-card" >
+      <div class='flex items-center justify-center h-auto w-[400px]'>
+            ${
+              result.poster_path
+                ? `
+          <img
+          src='https://image.tmdb.org/t/p/original${result.poster_path}'
+          alt="${global.search.type === "movie" ? result.title : result.name}"
+          class="border-2 border-white object-cover"
+           height="350"
+          width="350"
+              />
+                  `
+                : `
+          <img
+          src='../images/No-Image-Placeholder.svg.png'
+           alt="${global.search.type === "movie" ? result.title : result.name}"
+          height="350"
+          width="350"
+          class='object-cover'
+        />
+                  `
+            }
+      </div>
+     <div class="flex flex-col items-center gap-3 pt-2">
+         <div class="flex flex-col items-center gap-3 pt-2">
+            <p class="text-center">${
+              global.search.type === "movie" ? result.title : result.name
+            }</p>
+
+            ${
+              result.release_date || result.first_air_date
+                ? `
+            <p class="text-center">Release: ${
+              global.search.type === "movie"
+                ? result.release_date
+                : result.first_air_date
+            }</p>
+            
+            `
+                : "Release: N/A"
+            }
+            
+        </div>
+         
+      </div>
+    </li>
+    `;
+    document.querySelector("#search-result-heading").innerHTML = `
+     <h2>" ${results.length} of ${global.search.totalResults} Results for ${global.search.type} "</h2>
+    `;
+
+    ul.appendChild(anchor);
+  });
+
+  displayPagination();
+}
+
+//Create and display pagination
+
+function displayPagination() {
+  const div = document.createElement("div");
+  div.innerHTML = `
+          <div >
+          <button
+            class="border-solid border-2 border-yellow-300 px-5 py-2 ml-4 rounded-md text-lg hover:scale-[1.04] transition duration-150 hover:ease-in"
+            id='prev'
+            
+          >
+            Prev
+          </button>
+          <button
+            class="border-solid border-2 border-yellow-300 px-5 py-2 ml-4 rounded-md text-lg hover:scale-[1.04] transition duration-150 hover:ease-in"
+            id="next"
+          >
+            Next
+          </button>
+          </div>
+        <p class="text-xl mt-5">Page ${global.search.page} of ${global.search.totalPages}</p> 
+  `;
+
+  document.querySelector("#pagination").appendChild(div);
+
+  //disabling prev if on first page
+  if (global.search.page === 1) {
+    document.querySelector("#prev").disabled = true;
+  }
+
+  //disabling next if on last page
+  if (global.search.page === global.search.totalPages) {
+    document.querySelector("#next").disabled = true;
+  }
+
+  //Next page functionality
+  document.querySelector("#next").addEventListener("click", async () => {
+    // document.querySelector("#user-input").value = global.search.userInput;
+    global.search.page++;
+    const { results, total_pages } = await fetchSearchDataAPI();
+    console.log(results);
+    // displaySearchResults(results);
+  });
+}
+
+//Display slider movies section
 function initSwiper() {
   const swiper = new Swiper(".swiper", {
     slidesPerView: 1,
@@ -458,10 +636,8 @@ function displayBackdropImage(type, imagePath) {
 }
 
 async function fetchAPIData(endpoint) {
-  // example api request
-  // https://api.themoviedb.org/3/movie/550?api_key=863e6b16482d1bfa21ee50f9fcd54b5e
-  const baseUrl = "https://api.themoviedb.org/3/";
-  const apiKey = "863e6b16482d1bfa21ee50f9fcd54b5e";
+  const baseUrl = global.api.baseUrl;
+  const apiKey = global.api.apiKey;
 
   showLoader();
 
@@ -476,12 +652,29 @@ async function fetchAPIData(endpoint) {
   return data;
 }
 
+async function fetchSearchDataAPI() {
+  const baseUrl = global.api.baseUrl;
+  const apiKey = global.api.apiKey;
+
+  showLoader();
+
+  const response = await fetch(
+    `${baseUrl}search/${global.search.type}?api_key=${apiKey}&language=en-US&query=${global.search.userInput}&page=${global.search.page}`
+  );
+
+  const data = await response.json();
+
+  hideLoader();
+
+  return data;
+}
+
 function addCommas(number) {
   return String(number).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 function initialLoading() {
-  switch (globalRouter.currentPage) {
+  switch (global.currentPage) {
     case "/dist/index.html":
       getPopularMovies();
       displaySlider();
@@ -496,6 +689,8 @@ function initialLoading() {
       getMovieDetails();
       break;
     case "/dist/search.html":
+      search();
+
       break;
   }
 
