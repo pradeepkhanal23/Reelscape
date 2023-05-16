@@ -465,6 +465,10 @@ async function search() {
 
 //Search results display
 async function displaySearchResults(results) {
+  //clearing previous results
+  document.querySelector("#search-container").innerHTML = "";
+  document.querySelector("#search-result-heading").innerHTML = "";
+  document.querySelector("#pagination").innerHTML = "";
   results.forEach((result) => {
     const ul = document.querySelector("#search-container");
     const anchor = document.createElement("a");
@@ -522,7 +526,7 @@ async function displaySearchResults(results) {
     </li>
     `;
     document.querySelector("#search-result-heading").innerHTML = `
-     <h2>" ${results.length} of ${global.search.totalResults} Results for ${global.search.type} "</h2>
+     <h2>${results.length} of ${global.search.totalResults} Results for ${global.search.type} "${global.search.userInput}"</h2>
     `;
 
     ul.appendChild(anchor);
@@ -567,12 +571,21 @@ function displayPagination() {
   }
 
   //Next page functionality
-  document.querySelector("#next").addEventListener("click", async () => {
-    // document.querySelector("#user-input").value = global.search.userInput;
+  document.querySelector("#next").addEventListener("click", async (e) => {
+    e.preventDefault();
     global.search.page++;
     const { results, total_pages } = await fetchSearchDataAPI();
-    console.log(results);
-    // displaySearchResults(results);
+
+    displaySearchResults(results);
+  });
+
+  //Prev page functionality
+  document.querySelector("#prev").addEventListener("click", async (e) => {
+    e.preventDefault();
+    global.search.page--;
+    const { results, total_pages } = await fetchSearchDataAPI();
+
+    displaySearchResults(results);
   });
 }
 
