@@ -708,7 +708,6 @@ function initialLoading() {
 
       break;
   }
-
   activeLink();
 }
 
