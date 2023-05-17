@@ -25,5 +25,5 @@
 }
 
 .page-btn {
-  @apply border-solid border-2 border-yellow-300 px-5 py-2 ml-4 rounded-md text-lg hover:scale-[1.04] transition duration-150 hover:ease-in;
+  @apply border-solid border-2 border-yellow-300 px-5 py-2 ml-4 rounded-md text-xl hover:scale-[1.04] transition duration-150 hover:ease-in;
 }
