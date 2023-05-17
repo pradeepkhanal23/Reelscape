@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css "
+    "watch": "tailwindcss -i ./dist/src/input.css -o ./dist/output.css --watch",
+    "build": "tailwindcss -i ./dist/src/input.css -o ./dist/output.css "
   },
   "repository": {
     "type": "git",
@@ -15,9 +15,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/pradeepkhanal23/movie-app/issues"
+    "url": "https://github.com/pradeepkhanal23/Reelscape/issues"
   },
-  "homepage": "https://github.com/pradeepkhanal23/movie-app#readme",
+  "homepage": "https://github.com/pradeepkhanal23/Reelscape#readme",
   "devDependencies": {
     "tailwindcss": "^3.3.2"
   }
