@@ -688,6 +688,7 @@ function addCommas(number) {
 }
 
 function initialLoading() {
+  console.log(global.currentPage);
   switch (global.currentPage) {
     case "/dist/index.html":
       getPopularMovies();
