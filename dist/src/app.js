@@ -705,7 +705,6 @@ function initialLoading() {
       break;
     case "/search.html":
       search();
-
       break;
   }
   activeLink();
