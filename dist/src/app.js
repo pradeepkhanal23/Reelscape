@@ -690,20 +690,20 @@ function addCommas(number) {
 function initialLoading() {
   console.log(global.currentPage);
   switch (global.currentPage) {
-    case "/dist/index.html":
+    case "/":
       getPopularMovies();
       displaySlider();
       break;
-    case "/dist/shows.html":
+    case "/shows.html":
       getPopularTVShows();
       break;
-    case "/dist/tv-details.html":
+    case "/tv-details.html":
       getShowDetails();
       break;
-    case "/dist/movie-details.html":
+    case "/movie-details.html":
       getMovieDetails();
       break;
-    case "/dist/search.html":
+    case "/search.html":
       search();
 
       break;
