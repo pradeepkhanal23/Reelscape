@@ -2,7 +2,7 @@
 
 Reelscape is a movie app project inspired by Brad Traversy's JS course. It leverages the TMDB API to fetch movie data and provides a search functionality, a visually stunning Netflix-like backdrop display, and a mobile-friendly design. The project is built using Vanilla JS and Tailwind CSS.
 
-![Reelscape Screenshot](/images/reelscape.png)
+![Reelscape Screenshot](/dist/images/Screenshot%202023-07-06%20at%203.58.11%20pm.png)
 
 ## Features
 
